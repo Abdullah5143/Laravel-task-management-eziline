@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/tasks/{task}/feedback', [TaskController::class, 'showFeedbackForm'])->name('tasks.feedback');
 Route::post('/tasks/{task}/feedback', [TaskController::class, 'giveFeedback'])->name('tasks.giveFeedback');
-Route::get('tasks/show-feedbacks', [TaskController::class, 'showFeedbacks'])->name('tasks.showFeedback');
+Route::get('/tasks/{taskId}/feedbacks', [TaskController::class, 'showFeedbacks'])->name('tasks.showFeedbacks');
 
 require __DIR__.'/auth.php';
 

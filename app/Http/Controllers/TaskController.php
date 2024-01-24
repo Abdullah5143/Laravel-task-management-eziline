@@ -62,9 +62,12 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with('success', 'Feedback submitted successfully.');
     }
 
-    public function showFeedbacks()
-    {
-        $feedbacks = Feedback::all();
-        return view('tasks.show-feedbacks', compact('feedbacks'));
-    }
+    public function showFeedbacks($taskId)
+{
+    $task = Task::findOrFail($taskId);
+
+    $feedbacks = Feedback::where('task_id', $taskId)->get();
+
+    return view('tasks.show-feedbacks', compact('task', 'feedbacks'));
+}
 }

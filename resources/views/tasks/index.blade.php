@@ -55,7 +55,8 @@
                                     <td class="text-center">
                                         <!-- Provide a link to view feedbacks for the specific task -->
                                         @can('view feedback')
-                                            <a href="{{ route('tasks.showFeedback', $task->id) }}" class="btn btn-primary mb-2">View Feedback</a>
+                                        <a href="{{ route('tasks.showFeedbacks', $task->id) }}" class="btn btn-primary mb-2">View Feedback</a>
+
                                         @endcan
                                     </td>
                                     <td class="text-center">
